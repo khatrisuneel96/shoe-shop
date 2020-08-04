@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
+import RouteConfig from './RouteConfig';
+
 
 function App() {
   return (
     <div className="App">
-      Hello
+      <RouteConfig />
     </div>
   );
 }

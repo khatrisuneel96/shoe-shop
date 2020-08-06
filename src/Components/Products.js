@@ -17,8 +17,8 @@ const useStyles = makeStyles((theme) => ({
     img: {
         margin: 'auto',
         display: 'block',
-        maxWidth: '100%',
-        maxHeight: '100%',
+        maxWidth: '95%',
+        maxHeight: '95%',
         marginBottom: 10
     },
     grid: {
@@ -30,8 +30,7 @@ const useStyles = makeStyles((theme) => ({
 function Products() {
     const classes = useStyles();
     return (
-        <div>
-            <h1>Product</h1>
+        
             <div className={classes.root}>
                 <Grid container spacing={3}>
                     {Object.keys(Shoes).map((product,index) => {
@@ -50,7 +49,6 @@ function Products() {
                     })}
                 </Grid>
             </div>
-        </div>
     )
 }
 

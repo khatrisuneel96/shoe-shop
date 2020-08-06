@@ -10,22 +10,39 @@ import Shoes from '../shoes.json'
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      padding: 20,
+        padding: 20,
     },
     img: {
         margin: 'auto',
         display: 'block',
-        maxWidth: '100%',
-        maxHeight: '100%',
+        maxWidth: '90%',
+        maxHeight: '90%',
     },
     detail: {
         margin: 'auto',
         display: 'block',
-        maxWidth: '100%',
-        maxHeight: '100%',
-
-
-    }
+        maxWidth: '90%',
+        maxHeight: '90%',
+    },
+    btn: {
+        marginTop: 20,
+        width: '30ch',
+        backgroundColor: 'black',
+        color: ['white'].join(','),
+        '&:hover': {
+            backgroundColor: 'rgba(17,17,17,.75)',
+            borderColor: '#0062cc',
+            boxShadow: 'none',
+          },
+          '&:active': {
+            boxShadow: 'none',
+            backgroundColor: 'rgba(17,17,17,.75)',
+            borderColor: '#005cbf',
+          },
+          '&:focus': {
+            boxShadow: '0 0 0 0.2rem rgba(17,17,17,.75)',
+          },
+    },
 }));
 
 function ProductItem() {
@@ -39,33 +56,28 @@ function ProductItem() {
     }
 
     return (
+
         
-        <div>
-            <h1>Items</h1>
             <div className={classes.root}>
                 <Grid container spacing={3}>
-                    <Grid item xs={12} sm={6} >                               
+                    <Grid item xs={12} sm={6} >
                         <img className={classes.img} alt={shoe.name} src={shoe.img} />
-                        
-                    </Grid> 
-                    
+
+                    </Grid>
+
                     <Grid item xs={12} sm={6} className={classes.detail}>
+                        <Typography gutterBottom variant="inherit" color="textSecondary">{ id.toUpperCase() }</Typography>
                         <Typography gutterBottom variant="h3" color="textPrimary">{shoe.name}</Typography>
                         <Typography gutterBottom variant="body1" color="textSecondary" align='center' >{shoe.caption}</Typography>
                         
-                        <Button variant="outlined" color="default">
-                               Add to Cart
-                           </Button> 
+                        <Button variant="contained" color="primary" className={classes.btn} >
+                            Add to Cart
+                        </Button>
                         
-                     </Grid>
-
-                     
-                    
-                    
-
+                    </Grid>
                 </Grid>
             </div>
-        </div>
+        
     )
 }
 

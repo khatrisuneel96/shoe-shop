@@ -38,7 +38,7 @@ function Products() {
                         return (
                             <Grid item xs={12} sm={6} lg={4} key={index} className={classes.grid}>                               
                                 <ButtonBase>
-                                    <Link to={`/product/${product}`}>
+                                    <Link to={`/products/${product}`}>
                                         <img className={classes.img} alt={shoe.name} src={shoe.img} />
                                     </Link>
                                 </ButtonBase>

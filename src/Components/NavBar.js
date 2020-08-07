@@ -1,4 +1,5 @@
 import React from 'react'
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { Link } from 'react-router-dom'
 
 function NavBar() {
@@ -25,7 +26,7 @@ function NavBar() {
 
           <div className="nav-cart">
             <span>0</span>
-            
+            <ShoppingCartIcon />
           </div>
         </nav>
           

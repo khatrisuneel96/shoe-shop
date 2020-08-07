@@ -11,6 +11,7 @@ import Shoes from '../shoes.json'
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
+      textAlign: 'center',
       padding: 20,
       margin: 'auto',
     },
@@ -30,25 +31,24 @@ const useStyles = makeStyles((theme) => ({
 function Products() {
     const classes = useStyles();
     return (
-        
-            <div className={classes.root}>
-                <Grid container spacing={3}>
-                    {Object.keys(Shoes).map((product,index) => {
-                        const shoe = Shoes[product]
-                        return (
-                            <Grid item xs={12} sm={6} lg={4} key={index} className={classes.grid}>                               
-                                <ButtonBase>
-                                    <Link to={`/products/${product}`}>
-                                        <img className={classes.img} alt={shoe.name} src={shoe.img} />
-                                    </Link>
-                                </ButtonBase>
-                                <Typography gutterBottom variant="overline" color="textSecondary">{product.toUpperCase()}</Typography>
-                                <Typography gutterBottom variant="h4" color="textPrimary">{shoe.name}</Typography>
-                            </Grid>
-                        )
-                    })}
-                </Grid>
-            </div>
+        <div className={classes.root}>
+            <Grid container spacing={3}>
+                {Object.keys(Shoes).map((product,index) => {
+                    const shoe = Shoes[product]
+                    return (
+                        <Grid item xs={12} sm={6} lg={4} key={index} className={classes.grid}>                               
+                            <ButtonBase>
+                                <Link to={`/products/${product}`}>
+                                    <img className={classes.img} alt={shoe.name} src={shoe.img} />
+                                </Link>
+                            </ButtonBase>
+                            <Typography gutterBottom variant="overline" color="textSecondary">{product.toUpperCase()}</Typography>
+                            <Typography gutterBottom variant="h4" color="textPrimary">{shoe.name}</Typography>
+                        </Grid>
+                    )
+                })}
+            </Grid>
+        </div>
     )
 }
 

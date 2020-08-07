@@ -10,7 +10,8 @@ import Shoes from '../shoes.json'
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        padding: 20,
+        textAlign: 'center',
+        padding: 15,
     },
     img: {
         margin: 'auto',
@@ -47,7 +48,9 @@ const useStyles = makeStyles((theme) => ({
 
 function ProductItem() {
     let { id } = useParams();
-    const shoe = Shoes[id]
+    const shoe = Shoes[id];
+
+
 
     const classes = useStyles();
 
@@ -56,28 +59,25 @@ function ProductItem() {
     }
 
     return (
+        <div className={classes.root}>
+            <Grid container spacing={3}>
+                <Grid item xs={12} sm={6} >
+                    <img className={classes.img} alt={shoe.name} src={shoe.img} />
 
-        
-            <div className={classes.root}>
-                <Grid container spacing={3}>
-                    <Grid item xs={12} sm={6} >
-                        <img className={classes.img} alt={shoe.name} src={shoe.img} />
-
-                    </Grid>
-
-                    <Grid item xs={12} sm={6} className={classes.detail}>
-                        <Typography gutterBottom variant="inherit" color="textSecondary">{ id.toUpperCase() }</Typography>
-                        <Typography gutterBottom variant="h3" color="textPrimary">{shoe.name}</Typography>
-                        <Typography gutterBottom variant="body1" color="textSecondary" align='center' >{shoe.caption}</Typography>
-                        
-                        <Button variant="contained" color="primary" className={classes.btn} >
-                            Add to Cart
-                        </Button>
-                        
-                    </Grid>
                 </Grid>
-            </div>
-        
+
+                <Grid item xs={12} sm={6} className={classes.detail}>
+                    <Typography gutterBottom variant="inherit" color="textSecondary">{ id.toUpperCase() }</Typography>
+                    <Typography gutterBottom variant="h3" color="textPrimary">{shoe.name}</Typography>
+                    <Typography gutterBottom variant="body1" color="textSecondary" align='center' >{shoe.caption}</Typography>
+                    
+                    <Button variant="contained" color="primary" className={classes.btn} >
+                        Add to Cart
+                    </Button>
+                    
+                </Grid>
+            </Grid>
+        </div>  
     )
 }
 

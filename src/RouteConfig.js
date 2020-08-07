@@ -15,15 +15,17 @@ function RouteConfig() {
         <div>
             <Router>
                 <NavBar />
-                <Routes>
-                    <Route path="/" element={<HomePage />} />
-                    <Route path="/aboutus" element={<About /> } />
-                    <Route path="/products" element={<Products />} />
-                    <Route path="/products/:id" element={<ProductItem />} />
-                    <Route path="/contactus" element={<Contact />} />
-                    <Route path="/cart" element={<Cart />} />
-                    <Route path="*" element={<PageNotFound />} />
-                </Routes>
+                <section>
+                    <Routes>
+                        <Route path="/" element={<HomePage />} />
+                        <Route path="/aboutus" element={<About /> } />
+                        <Route path="/products" element={<Products />} />
+                        <Route path="/products/:id" element={<ProductItem />} />
+                        <Route path="/contactus" element={<Contact />} />
+                        <Route path="/cart" element={<Cart />} />
+                        <Route path="*" element={<PageNotFound />} />
+                    </Routes>
+                </section>
             </Router>
         </div>
     )

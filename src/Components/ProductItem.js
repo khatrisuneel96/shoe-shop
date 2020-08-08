@@ -50,8 +50,6 @@ function ProductItem() {
     let { id } = useParams();
     const shoe = Shoes[id];
 
-
-
     const classes = useStyles();
 
     if (!shoe) {
